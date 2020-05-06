@@ -1,14 +1,11 @@
-const initialState = {
-  error: false,
-  loading: true,
-};
+import { PUT_BOOK_IN_BASKET } from "../actions/action-const";
 
 export const basketBooksReducer = (state = [], action) => {
   switch (action.type) {
-    case "BOOKS_LOADED":
-      return {
-        books: action.payload,
-      };
+    case PUT_BOOK_IN_BASKET:
+      return state.includes(action.book)
+        ? state.filter(({ id }) => id !== action.book.id)
+        : [...state, action.book];
     default:
       return state;
   }

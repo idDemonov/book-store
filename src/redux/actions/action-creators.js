@@ -1,17 +1,13 @@
 import * as types from "./action-const";
 
-export const addBookInBasketAC = (id) => ({
+export const putBookInBasket = (book) => ({
   type: types.PUT_BOOK_IN_BASKET,
-  id,
+  book,
 });
 
-export const getBooksLocalstorageAC = () => ({
+export const getBooksLocalstorage = () => ({
   type: types.GET_BOOKS_LOCALSTORAGE,
 });
-
-export const getBooksFirestoreAC = () => ({ type: types.GET_BOOKS_FIRESTORE });
-
-export const addBookBasketAC = (id) => ({ type: types.ADD_BOOK_BASKET, id });
 
 export const removeBookBasket = (id) => ({
   type: types.REMOVE_BOOK_BASKET,
@@ -23,4 +19,12 @@ export const deleteBookBasket = (id) => ({
   id,
 });
 
+export const addBookBasket = (id) => ({ type: types.ADD_BOOK_BASKET, id });
+
+export const openModal = (book) => ({ type: types.OPEN_MODAL, book });
+
+export const getBooksFirestore = () => ({ type: types.GET_BOOKS_FIRESTORE });
+
 export const cleanBasket = () => ({ type: types.CLEAN_BASKET });
+
+export const closeModal = () => ({ type: types.CLOSE_MODAL });

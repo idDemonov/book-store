@@ -1,24 +1,23 @@
 import React from "react";
 import Grid from "@material-ui/core/Grid";
 import { makeStyles } from "@material-ui/core/styles";
-import { CardItem } from "../card-item/card-item";
+import { CardItem } from "../card-item";
 
 const useStyles = makeStyles({
   root: {
-    marginTop: "20px",
+    backgroundColor: "#f2f3f4",
   },
 });
 
 export const CardListPresent = (props) => {
   const classes = useStyles();
-  const { cardBooks } = props;
+  const { cardBooks, modal } = props;
+
   return (
-    <main className={classes.root}>
-      <Grid container justify="center" spacing={3}>
-        {cardBooks.map((card) => (
-          <CardItem card={card} />
-        ))}
-      </Grid>
-    </main>
+    <Grid className={classes.root} container justify="center" component="main">
+      {cardBooks.map((card) => (
+        <CardItem key={card.id} card={card} modal={modal} />
+      ))}
+    </Grid>
   );
 };

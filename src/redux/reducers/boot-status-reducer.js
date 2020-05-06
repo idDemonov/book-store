@@ -1,4 +1,7 @@
-const initialState = [];
+const initialState = {
+  error: false,
+  loading: true,
+};
 
 export const bootStatusReducer = (state = initialState, action) => {
   switch (action.type) {
