@@ -12,13 +12,11 @@ import { SnackbarProvider } from "notistack";
 export const AppPresent = (props) => {
   return (
     <CssBaseline>
-      <SnackbarProvider>
-        <Header />
-        <Switch>
-          <Route path="/" exact component={HomePage} />
-          <Route path="/basket" component={BasketPage} />
-        </Switch>
-      </SnackbarProvider>
+      <Header />
+      <Switch>
+        <Route path="/" exact component={HomePage} />
+        <Route path="/basket" component={BasketPage} />
+      </Switch>
     </CssBaseline>
   );
 };

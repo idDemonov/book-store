@@ -1,7 +1,10 @@
 import { connect } from "react-redux";
 import { BtnToggleBasketPresent } from "./btn-toggle-basket-present";
 import { bindActionCreators } from "redux";
-import { putBookInBasket } from "../../redux/actions/action-creators";
+import {
+  putBookInBasket,
+  updateSum,
+} from "../../redux/actions/action-creators";
 
 const mapStateToProps = ({ basketBooks }) => {
   return {
@@ -10,7 +13,7 @@ const mapStateToProps = ({ basketBooks }) => {
 };
 
 const mapDispatchToProps = (dispatch) => ({
-  actions: bindActionCreators({ putBookInBasket }, dispatch),
+  actions: bindActionCreators({ putBookInBasket, updateSum }, dispatch),
 });
 
 export const BtnToggleBasketContainer = connect(

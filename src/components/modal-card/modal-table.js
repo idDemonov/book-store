@@ -25,7 +25,7 @@ export const SimpleTable = ({ book }) => {
           <TableRow>
             <TableCell align="left">{book.author}</TableCell>
             <TableCell align="center">{book.price}₽</TableCell>
-            <TableCell align="center">5 из 5</TableCell>
+            <TableCell align="center">{book.star} из 5</TableCell>
           </TableRow>
         </TableBody>
       </Table>

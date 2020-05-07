@@ -7,6 +7,8 @@ const initialState = [
     name: "Сам себе программист",
     price: 500,
     urlImg: "https://cdn1.ozone.ru/s3/multimedia-l/wc1200/6012166833.jpg",
+    star: 4.8,
+    count: 1,
   },
   {
     id: "4CI1PU0ndpARdaULzISS",
@@ -16,6 +18,8 @@ const initialState = [
     name: "Сам себе программист",
     price: 500,
     urlImg: "https://cdn1.ozone.ru/s3/multimedia-l/wc1200/6012166833.jpg",
+    star: 4.8,
+    count: 1,
   },
   {
     id: "76u5QZNjCEAaklhItu4f",
@@ -25,6 +29,8 @@ const initialState = [
     name: "Сам себе программист",
     price: 500,
     urlImg: "https://cdn1.ozone.ru/s3/multimedia-l/wc1200/6012166833.jpg",
+    star: 4.8,
+    count: 1,
   },
   {
     id: "U3bMUAQlGNeDX6xTWdlt",
@@ -34,6 +40,8 @@ const initialState = [
     name: "Сам себе программист",
     price: 500,
     urlImg: "https://cdn1.ozone.ru/s3/multimedia-l/wc1200/6012166833.jpg",
+    star: 4.8,
+    count: 1,
   },
   {
     id: "WyAnxvAtVGEUJPOEnGac",
@@ -43,6 +51,8 @@ const initialState = [
     name: "Сам себе программист",
     price: 500,
     urlImg: "https://cdn1.ozone.ru/s3/multimedia-l/wc1200/6012166833.jpg",
+    star: 4.8,
+    count: 1,
   },
   {
     id: "bRamiWJYG0YnCBEHK2V7",
@@ -52,6 +62,8 @@ const initialState = [
     name: "Сам себе программист",
     price: 500,
     urlImg: "https://cdn1.ozone.ru/s3/multimedia-l/wc1200/6012166833.jpg",
+    star: 4.8,
+    count: 1,
   },
   {
     id: "ggzoyccmBcK5H13cjtns",
@@ -61,6 +73,8 @@ const initialState = [
     name: "Сам себе программист",
     price: 500,
     urlImg: "https://cdn1.ozone.ru/s3/multimedia-l/wc1200/6012166833.jpg",
+    star: 4.8,
+    count: 1,
   },
   {
     id: "kfH4511Ww6B10ldfFg8E",
@@ -70,6 +84,8 @@ const initialState = [
     name: "Сам себе программист",
     price: 500,
     urlImg: "https://cdn1.ozone.ru/s3/multimedia-l/wc1200/6012166833.jpg",
+    star: 4.8,
+    count: 1,
   },
   {
     id: "kwyY9zT7o52doIOp2hic",
@@ -79,6 +95,8 @@ const initialState = [
     name: "Сам себе программист",
     price: 500,
     urlImg: "https://cdn1.ozone.ru/s3/multimedia-l/wc1200/6012166833.jpg",
+    star: 4.8,
+    count: 1,
   },
   {
     id: "mdnAyG7yqpe15VCH9s61",
@@ -88,6 +106,8 @@ const initialState = [
     name: "Сам себе программист",
     price: 500,
     urlImg: "https://cdn1.ozone.ru/s3/multimedia-l/wc1200/6012166833.jpg",
+    star: 4.8,
+    count: 1,
   },
   {
     id: "nJwkM64g3Bt00IvjgMzl",
@@ -97,6 +117,8 @@ const initialState = [
     name: "Сам себе программист",
     price: 500,
     urlImg: "https://cdn1.ozone.ru/s3/multimedia-l/wc1200/6012166833.jpg",
+    star: 4.8,
+    count: 1,
   },
   {
     id: "tjYYydOn8ftRXWeKTwDC",
@@ -106,6 +128,8 @@ const initialState = [
     name: "Сам себе программист",
     price: 500,
     urlImg: "https://cdn1.ozone.ru/s3/multimedia-l/wc1200/6012166833.jpg",
+    star: 4.8,
+    count: 1,
   },
 ];
 
