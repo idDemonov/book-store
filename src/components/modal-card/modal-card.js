@@ -5,12 +5,14 @@ import useMediaQuery from "@material-ui/core/useMediaQuery";
 
 import CardContent from "@material-ui/core/CardContent";
 import CardMedia from "@material-ui/core/CardMedia";
-import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
 import { SimpleTable } from "./modal-table";
 
+import { BtnToggleBasket } from "../btn-toggle-basket";
+
 export const ModalCard = ({ status, closeModal, book }) => {
   const classes = useStyles();
+
   const matches = useMediaQuery("(max-width:600px)");
 
   const body = book ? (
@@ -30,7 +32,7 @@ export const ModalCard = ({ status, closeModal, book }) => {
   );
 };
 
-function ImgMediaCard({ book, matches, classes }) {
+function ImgMediaCard({ book, matches }) {
   return (
     <>
       <CardMedia
@@ -47,9 +49,7 @@ function ImgMediaCard({ book, matches, classes }) {
         </Typography>
         <SimpleTable book={book} />
       </CardContent>
-      <Button size="small" color="primary">
-        Share
-      </Button>
+      <BtnToggleBasket card={book} />
     </>
   );
 }
