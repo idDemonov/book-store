@@ -6,9 +6,9 @@ import {
   updateSum,
 } from "../../redux/actions/action-creators";
 
-const mapStateToProps = ({ basketBooks }) => {
+const mapStateToProps = (state) => {
   return {
-    basketBooks,
+    basketBooks: state.basketBooks,
   };
 };
 

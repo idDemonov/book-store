@@ -16,7 +16,7 @@ export const BtnToggleBasketPresent = (props) => {
   };
 
   const { card, basketBooks } = props;
-  const { putBookInBasket, updateSum } = props.actions;
+  const { putBookInBasket } = props.actions;
 
   const btnStatus = basketBooks.includes(card);
 

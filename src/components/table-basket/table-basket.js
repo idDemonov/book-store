@@ -97,9 +97,11 @@ const InternalTable = ({ data, open }) => {
                 <TableRow>
                   <TableCell align="left">{data.author}</TableCell>
                   <TableCell align="right">{data.star}★</TableCell>
-                  <TableCell align="right">{data.count}500₽</TableCell>
+                  <TableCell align="right">{data.count}</TableCell>
                   <TableCell align="right">{data.price}₽</TableCell>
-                  <TableCell align="right">{data.totalSum}₽</TableCell>
+                  <TableCell align="right">
+                    {data.count * data.price}₽
+                  </TableCell>
                 </TableRow>
               </TableBody>
             </Table>

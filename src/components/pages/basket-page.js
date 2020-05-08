@@ -4,26 +4,29 @@ import { PayCard } from "../pay-card/pay-card";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import * as actions from "../../redux/actions/action-creators";
+import { calcTotalSum } from "../../redux/selectors/calc-total-sum";
 
 const BasketPageC = (props) => {
   const { actions } = props;
   const { basketBooks, totalSum } = props;
 
   return (
-    <div>
+    <>
       <TableBasket
         actions={actions}
         totalSum={totalSum}
         basketBooks={basketBooks}
       />
-      ;
       <PayCard sum={totalSum} />
-    </div>
+    </>
   );
 };
 
-const mapStateToProps = ({ basketBooks, totalSum }) => {
-  return { basketBooks, totalSum };
+const mapStateToProps = (state) => {
+  return {
+    basketBooks: state.basketBooks,
+    totalSum: calcTotalSum(state.basketBooks),
+  };
 };
 
 const mapDispatchToProps = (dispatch) => {
