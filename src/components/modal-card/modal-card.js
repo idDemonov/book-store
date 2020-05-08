@@ -8,7 +8,7 @@ import CardMedia from "@material-ui/core/CardMedia";
 import Typography from "@material-ui/core/Typography";
 import { SimpleTable } from "./modal-table";
 
-import { BtnToggleBasket } from "../btn-toggle-basket";
+import { BtnToggleBookInBasket } from "../btn-toggle-basket";
 
 export const ModalCard = ({ status, closeModal, book }) => {
   const classes = useStyles();
@@ -49,7 +49,7 @@ function ImgMediaCard({ book, matches }) {
         </Typography>
         <SimpleTable book={book} />
       </CardContent>
-      <BtnToggleBasket card={book} />
+      <BtnToggleBookInBasket book={book} />
     </>
   );
 }

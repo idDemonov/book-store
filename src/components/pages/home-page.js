@@ -6,9 +6,8 @@ import { bindActionCreators } from "redux";
 import { closeModal } from "../../redux/actions/action-creators";
 import { SnackbarProvider } from "notistack";
 
-const HomePageC = (props) => {
-  const { status, book } = props.modal;
-  const { closeModal } = props.actions;
+const HomePageC = ({ closeModal, modal }) => {
+  const { status, book } = modal;
   return (
     <SnackbarProvider>
       <CardList />
@@ -19,8 +18,7 @@ const HomePageC = (props) => {
 
 const mapStateToProps = ({ modal }) => ({ modal });
 
-const mapDispatchToProps = (dispatch) => ({
-  actions: bindActionCreators({ closeModal }, dispatch),
-});
+const mapDispatchToProps = (dispatch) =>
+  bindActionCreators({ closeModal }, dispatch);
 
 export const HomePage = connect(mapStateToProps, mapDispatchToProps)(HomePageC);

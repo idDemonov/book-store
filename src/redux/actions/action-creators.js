@@ -23,8 +23,6 @@ export const addBookBasket = (id) => ({ type: types.ADD_BOOK_BASKET, id });
 
 export const openModal = (book) => ({ type: types.OPEN_MODAL, book });
 
-export const updateSum = (basket) => ({ type: types.UPDATE_SUM, basket });
-
 export const getBooksFirestore = () => ({ type: types.GET_BOOKS_FIRESTORE });
 
 export const cleanBasket = () => ({ type: types.CLEAN_BASKET });

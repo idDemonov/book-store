@@ -13,7 +13,7 @@ export const useStyles = makeStyles({
     height: "140px",
   },
   price: {
-    color: "#616161",
+    fontWeight: 700,
   },
   actionArea: {
     display: "-webkit-box",

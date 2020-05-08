@@ -1,1 +1,1 @@
-export { BtnToggleBasketContainer as BtnToggleBasket } from "./btn-toggle-basket-container";
+export { BtnToggleBasketContainer as BtnToggleBookInBasket } from "./btn-toggle-basket-container";

@@ -15,8 +15,8 @@ export const CardListPresent = (props) => {
 
   return (
     <Grid className={classes.root} container justify="center" component="main">
-      {cardBooks.map((card) => (
-        <CardItem key={card.id} card={card} modal={modal} />
+      {cardBooks.map((book) => (
+        <CardItem key={book.id} book={book} modal={modal} />
       ))}
     </Grid>
   );

@@ -3,13 +3,14 @@ import { TableBasket } from "../table-basket";
 import { PayCard } from "../pay-card/pay-card";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
-import * as actions from "../../redux/actions/action-creators";
+import {
+  addBookBasket,
+  removeBookBasket,
+  deleteBookBasket,
+} from "../../redux/actions/action-creators";
 import { calcTotalSum } from "../../redux/selectors/calc-total-sum";
 
-const BasketPageC = (props) => {
-  const { actions } = props;
-  const { basketBooks, totalSum } = props;
-
+const BasketPageC = ({ basketBooks, totalSum, actions }) => {
   return (
     <>
       <TableBasket
@@ -30,7 +31,12 @@ const mapStateToProps = (state) => {
 };
 
 const mapDispatchToProps = (dispatch) => {
-  return { actions: bindActionCreators(actions, dispatch) };
+  return {
+    actions: bindActionCreators(
+      { addBookBasket, removeBookBasket, deleteBookBasket },
+      dispatch
+    ),
+  };
 };
 
 export const BasketPage = connect(

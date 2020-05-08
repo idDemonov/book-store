@@ -1,11 +1,15 @@
-import React, { useState } from "react";
-import { useSnackbar } from "notistack";
+import React from "react";
+// Material UI
 import Button from "@material-ui/core/Button";
 import AddIcon from "@material-ui/icons/Add";
 import CheckIcon from "@material-ui/icons/Check";
+// Other
+import { useSnackbar } from "notistack";
 
-export const BtnToggleBasketPresent = (props) => {
+export const BtnToggleBasketPresent = ({ book, basketBooks, actions }) => {
   const { enqueueSnackbar } = useSnackbar();
+  const { putBookInBasket } = actions;
+  const btnStatus = basketBooks.includes(book);
 
   const showMassage = () => {
     const massage = btnStatus
@@ -15,14 +19,9 @@ export const BtnToggleBasketPresent = (props) => {
     enqueueSnackbar(massage, { variant });
   };
 
-  const { card, basketBooks } = props;
-  const { putBookInBasket } = props.actions;
-
-  const btnStatus = basketBooks.includes(card);
-
   const handlerButtonClick = () => {
     showMassage();
-    putBookInBasket(card);
+    putBookInBasket(book);
   };
 
   if (btnStatus) {

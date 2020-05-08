@@ -13,7 +13,6 @@ export const DELETE_BOOK_BASKET = "DELETE_BOOK_BASKET";
 // __Корзина__
 
 export const CLEAN_BASKET = "CLEAN_BASKET";
-export const UPDATE_SUM = "UPDATE_SUM";
 
 // __Модальное окно__
 export const OPEN_MODAL = "OPEN_MODAL";
