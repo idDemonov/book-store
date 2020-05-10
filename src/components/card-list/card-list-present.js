@@ -9,13 +9,18 @@ const useStyles = makeStyles({
   },
 });
 
-export const CardListPresent = ({ cardBooks, modal }) => {
+export const CardListPresent = ({ cardBooks, bootStatus, openModal }) => {
   const classes = useStyles();
 
   return (
     <Grid className={classes.root} container justify="center" component="main">
       {cardBooks.map((book) => (
-        <CardItem key={book.id} book={book} modal={modal} />
+        <CardItem
+          key={book.id}
+          book={book}
+          openModal={openModal}
+          bootStatus={bootStatus}
+        />
       ))}
     </Grid>
   );

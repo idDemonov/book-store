@@ -21,4 +21,12 @@ export const useStyles = makeStyles({
     WebkitBoxOrient: "vertical",
     overflow: "hidden",
   },
+  loading: {
+    display: "flex",
+    width: "345px",
+    height: "330px",
+    margin: "15px 10px",
+    justifyContent: "center",
+    alignItems: "center",
+  },
 });

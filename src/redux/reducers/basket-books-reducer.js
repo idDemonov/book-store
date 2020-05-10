@@ -1,9 +1,9 @@
 import {
   PUT_BOOK_IN_BASKET,
-  ADD_BOOK_BASKET,
-  REMOVE_BOOK_BASKET,
+  INCREMENT_BOOK_BASKET,
+  DECREMENT_BOOK_BASKET,
   DELETE_BOOK_BASKET,
-} from "../actions/action-const";
+} from "../actions/constants";
 
 export const basketBooksReducer = (state = [], action) => {
   switch (action.type) {
@@ -11,9 +11,9 @@ export const basketBooksReducer = (state = [], action) => {
       return toggleBookInBasket(state, action.book);
     case DELETE_BOOK_BASKET:
       return toggleBookInBasket(state, action.book);
-    case ADD_BOOK_BASKET:
+    case INCREMENT_BOOK_BASKET:
       return addCountBook(state, action.id);
-    case REMOVE_BOOK_BASKET:
+    case DECREMENT_BOOK_BASKET:
       return removeCountBook(state, action.id);
     default:
       return state;
@@ -22,14 +22,18 @@ export const basketBooksReducer = (state = [], action) => {
 
 const addCountBook = (basket, id) => {
   return basket.map((book) => {
-    if (book.id === id) book.count += 1;
+    if (book.id === id) {
+      return { ...book, count: book.count + 1 };
+    }
     return book;
   });
 };
 
 const removeCountBook = (basket, id) => {
   return basket.map((book) => {
-    if (book.id === id && book.count > 1) book.count -= 1;
+    if (book.id === id && book.count > 1) {
+      return { ...book, count: book.count - 1 };
+    }
     return book;
   });
 };

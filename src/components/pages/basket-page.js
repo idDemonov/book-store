@@ -1,6 +1,8 @@
 import React from "react";
+// Component
 import { TableBasket } from "../table-basket";
 import { PayCard } from "../pay-card/pay-card";
+// Other
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import {
@@ -10,7 +12,7 @@ import {
 } from "../../redux/actions/action-creators";
 import { calcTotalSum } from "../../redux/selectors/calc-total-sum";
 
-const BasketPageC = ({ basketBooks, totalSum, actions }) => {
+const BasketPageContainer = ({ basketBooks, totalSum, actions }) => {
   return (
     <>
       <TableBasket
@@ -23,12 +25,10 @@ const BasketPageC = ({ basketBooks, totalSum, actions }) => {
   );
 };
 
-const mapStateToProps = (state) => {
-  return {
-    basketBooks: state.basketBooks,
-    totalSum: calcTotalSum(state.basketBooks),
-  };
-};
+const mapStateToProps = ({ basketBooks }) => ({
+  basketBooks,
+  totalSum: calcTotalSum(basketBooks),
+});
 
 const mapDispatchToProps = (dispatch) => {
   return {
@@ -42,4 +42,4 @@ const mapDispatchToProps = (dispatch) => {
 export const BasketPage = connect(
   mapStateToProps,
   mapDispatchToProps
-)(BasketPageC);
+)(BasketPageContainer);

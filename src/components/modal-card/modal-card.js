@@ -1,55 +1,37 @@
 import React from "react";
 import Modal from "@material-ui/core/Modal";
 import { useStyles } from "./modal-card-style";
-import useMediaQuery from "@material-ui/core/useMediaQuery";
-
-import CardContent from "@material-ui/core/CardContent";
-import CardMedia from "@material-ui/core/CardMedia";
 import Typography from "@material-ui/core/Typography";
 import { SimpleTable } from "./modal-table";
-
 import { BtnToggleBookInBasket } from "../btn-toggle-basket";
 
-export const ModalCard = ({ status, closeModal, book }) => {
+export const ModalCard = ({ modal, closeModal }) => {
   const classes = useStyles();
 
-  const matches = useMediaQuery("(max-width:600px)");
-
-  const body = book ? (
-    <div className={matches ? classes.paperSm : classes.paper}>
-      <ImgMediaCard classes={classes} matches={matches} book={book} />
-    </div>
-  ) : (
-    <div />
-  );
-
+  const { status, book } = modal;
   return (
-    <div>
-      <Modal onClose={closeModal} open={status}>
-        {body}
-      </Modal>
-    </div>
+    <Modal className={classes.modal} onClose={closeModal} open={status}>
+      <div className={classes.modalCard}>
+        <div>
+          <img
+            className={classes.bookImg}
+            src={book && book.urlImage}
+            alt="Книга"
+          />
+        </div>
+        <div>
+          <Typography gutterBottom variant="h5" component="h2">
+            {book && book.name}
+          </Typography>
+          <Typography variant="body2" color="textSecondary" component="p">
+            {book && book.description}
+          </Typography>
+          <SimpleTable book={book} />
+          <div className={classes.footer}>
+            <BtnToggleBookInBasket book={book} />
+          </div>
+        </div>
+      </div>
+    </Modal>
   );
 };
-
-function ImgMediaCard({ book, matches }) {
-  return (
-    <>
-      <CardMedia
-        component="img"
-        height={matches ? "350" : "400"}
-        image={book.urlImage}
-      />
-      <CardContent>
-        <Typography gutterBottom variant="h5" component="h2">
-          {book.name}
-        </Typography>
-        <Typography variant="body2" color="textSecondary" component="p">
-          {book.description}
-        </Typography>
-        <SimpleTable book={book} />
-      </CardContent>
-      <BtnToggleBookInBasket book={book} />
-    </>
-  );
-}

@@ -1,4 +1,4 @@
-import { OPEN_MODAL, CLOSE_MODAL } from "../actions/action-const";
+import { OPEN_MODAL, CLOSE_MODAL } from "../actions/constants";
 const initialState = {
   status: false,
   book: null,

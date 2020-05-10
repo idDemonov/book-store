@@ -1,4 +1,4 @@
-import { PUT_BOOKS_IN_STATE } from "../actions/action-const";
+import { PUT_BOOKS_IN_STATE } from "../actions/constants";
 const initialState = [];
 
 export const cardBooksReducer = (state = initialState, action) => {

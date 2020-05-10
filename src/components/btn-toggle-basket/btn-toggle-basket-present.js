@@ -9,7 +9,7 @@ import { useSnackbar } from "notistack";
 export const BtnToggleBasketPresent = ({ book, basketBooks, actions }) => {
   const { enqueueSnackbar } = useSnackbar();
   const { putBookInBasket } = actions;
-  const btnStatus = basketBooks.includes(book);
+  const btnStatus = basketBooks.some((b) => b.id === book.id);
 
   const showMassage = () => {
     const massage = btnStatus
@@ -24,22 +24,14 @@ export const BtnToggleBasketPresent = ({ book, basketBooks, actions }) => {
     putBookInBasket(book);
   };
 
-  if (btnStatus) {
-    return (
-      <Button variant="outlined" color="primary" onClick={handlerButtonClick}>
-        <CheckIcon />
-      </Button>
-    );
-  } else {
-    return (
-      <Button
-        variant="outlined"
-        color="primary"
-        onClick={handlerButtonClick}
-        endIcon={<AddIcon />}
-      >
-        В корзину
-      </Button>
-    );
-  }
+  return (
+    <Button
+      variant="outlined"
+      color="primary"
+      onClick={handlerButtonClick}
+      endIcon={btnStatus ? null : <AddIcon />}
+    >
+      {btnStatus ? <CheckIcon /> : "В корзину"}
+    </Button>
+  );
 };

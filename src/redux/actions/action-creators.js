@@ -1,4 +1,4 @@
-import * as types from "./action-const";
+import * as types from "./constants";
 import { getBooksFromFirestore } from "../../services/firebase";
 
 // Basket Book
@@ -13,10 +13,13 @@ export const deleteBookBasket = (book) => ({
   book,
 });
 
-export const addBookBasket = (id) => ({ type: types.ADD_BOOK_BASKET, id });
+export const addBookBasket = (id) => ({
+  type: types.INCREMENT_BOOK_BASKET,
+  id,
+});
 
 export const removeBookBasket = (id) => ({
-  type: types.REMOVE_BOOK_BASKET,
+  type: types.DECREMENT_BOOK_BASKET,
   id,
 });
 
@@ -48,17 +51,15 @@ export const getBook = (dispatch) => {
 
   const books = localStorage.getItem("books");
   if (books != null) {
+    dispatch(toggleIsFetching(false));
     dispatch(putBooksInState(JSON.parse(books)));
   } else {
     getBooksFromFirestore()
       .then((books) => {
         localStorage.setItem("books", JSON.stringify(books));
+        dispatch(toggleIsFetching(false));
         dispatch(putBooksInState(books));
       })
       .catch((err) => dispatch(error(err)));
   }
-
-  dispatch(toggleIsFetching(false));
 };
-
-// export const getBooksFirestore = () => ({ type: types.GET_BOOKS_FIRESTORE });

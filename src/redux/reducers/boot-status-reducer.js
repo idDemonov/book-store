@@ -1,8 +1,8 @@
-import { ERROR, TOGGLE_IS_FETCHING } from "../actions/action-const";
+import { ERROR, TOGGLE_IS_FETCHING } from "../actions/constants";
 
 const initialState = {
   error: false,
-  loading: false,
+  loading: true,
 };
 
 export const bootStatusReducer = (state = initialState, action) => {

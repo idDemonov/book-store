@@ -9,10 +9,17 @@ import Typography from "@material-ui/core/Typography";
 // Other
 import { useStyles } from "./card-item-style";
 import { BtnToggleBookInBasket } from "../btn-toggle-basket";
+import CircularProgress from "@material-ui/core/CircularProgress";
 
-export const CardItemPresent = ({ book, actions }) => {
+export const CardItem = ({ book, bootStatus, openModal }) => {
   const classes = useStyles();
-  const { openModal } = actions;
+
+  if (bootStatus.loading)
+    return (
+      <Card className={classes.loading}>
+        <CircularProgress size={100} />
+      </Card>
+    );
 
   return (
     <Card className={classes.root}>

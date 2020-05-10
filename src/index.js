@@ -7,6 +7,7 @@ import { Provider } from "react-redux";
 import { store } from "./redux/store";
 // Components
 import { App } from "./components/app";
+import { getBook } from "./redux/actions/action-creators";
 
 render(
   <Provider store={store}>
@@ -16,3 +17,5 @@ render(
   </Provider>,
   document.getElementById("root")
 );
+
+store.dispatch(getBook);
