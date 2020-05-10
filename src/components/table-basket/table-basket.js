@@ -47,7 +47,7 @@ const Row = (props) => {
         </TableCell>
         <TableCell scope="row">{book.name}</TableCell>
         <TableCell align="center">{book.count}</TableCell>
-        <TableCell align="center">{/*book.totalPrice*/} 121</TableCell>
+        <TableCell align="center">{book.count * book.price}₽</TableCell>
         <TableCell align="right">
           <ButtonGroup
             deleteBook={deleteBook}

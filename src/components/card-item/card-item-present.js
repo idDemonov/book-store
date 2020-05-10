@@ -17,12 +17,10 @@ export const CardItemPresent = ({ book, actions }) => {
   return (
     <Card className={classes.root}>
       <CardActionArea onClick={() => openModal(book)}>
-        <CardMedia className={classes.media} image={book.urlImg} />
+        <CardMedia className={classes.media} image={book.urlImage} />
         <CardContent>
           <div className={classes.title}>
-            <Typography variant="h5" component="h2">
-              {book.name}
-            </Typography>
+            <Typography variant="h6">{book.name}</Typography>
             <Typography
               variant="subtitle1"
               color="primary"

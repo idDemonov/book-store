@@ -19,7 +19,7 @@ const StyledBadge = withStyles({
 const ShoppingBasketPresent = (props) => {
   const count = props.basketBooks.length;
   return (
-    <IconButton aria-label="Корзина">
+    <IconButton>
       <StyledBadge badgeContent={count}>
         <ShoppingCartIcon />
       </StyledBadge>

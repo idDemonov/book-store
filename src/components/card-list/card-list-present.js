@@ -9,9 +9,8 @@ const useStyles = makeStyles({
   },
 });
 
-export const CardListPresent = (props) => {
+export const CardListPresent = ({ cardBooks, modal }) => {
   const classes = useStyles();
-  const { cardBooks, modal } = props;
 
   return (
     <Grid className={classes.root} container justify="center" component="main">

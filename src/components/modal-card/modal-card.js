@@ -38,7 +38,7 @@ function ImgMediaCard({ book, matches }) {
       <CardMedia
         component="img"
         height={matches ? "350" : "400"}
-        image={book.urlImg}
+        image={book.urlImage}
       />
       <CardContent>
         <Typography gutterBottom variant="h5" component="h2">

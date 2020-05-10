@@ -11,7 +11,7 @@ const useStyles = makeStyles({
   },
   link: {
     alignSelf: "center",
-    color: "rgba(0, 0, 0, 0.87)",
+    color: "rgba(0,0,0,0.87)",
     textDecoration: "none",
   },
 });
